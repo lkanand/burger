@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'sf_espresso_shackregular';
+    src: url('sfespressoshack-webfont.woff2') format('woff2'),
+         url('sfespressoshack-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'maneater_bbregular';
+    src: url('maneaterbb_reg-webfont.woff2') format('woff2'),
+         url('maneaterbb_reg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+	background: #212020;
+	color: #af0e0e;
+	font-family: "maneater_bbregular";
+}
+
+h1{
+	font-family: "sf_espresso_shackregular";
+	font-size: 60px;
+	text-align: center;
+	margin-bottom: 0px;
+	margin-top: 18px;
+}
+
+h3{
+	text-align: center;
+	margin-top: 10px;
+	font-size: 50px;
+}
+
+h2{
+	font-size: 40px;
+	margin: 20px auto;
+}
+
+#wishlist, #burger-holder, #devoured{
+	height: 50vh;
+	width: 30vw;
+	border: 3px solid #af0e0e;
+	margin-top: 0;
+	text-align: center;
+	overflow: auto;
+}
+
+#burger-holder{
+	border: none;
+	overflow: hidden;
+}
+
+.helper{
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+
+#burger-image{
+	width: 96%;
+	height: auto;
+	vertical-align: middle;
+}
+
+#wrapper{
+	width: 96vw;
+	display: flex;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+ol{
+	font-size: 28px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 0;
+}
+
+li{
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.entry p{
+	vertical-align: middle;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.entry button{
+	border: 2px solid #af0e0e;
+	background: none;
+	color: #af0e0e;
+	font-size: 15px;
+	font-family: "maneater_bbregular";
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.entry button:hover{
+	cursor: pointer;
+	background: #af0e0e;
+	color: #212020;
+}
+
+#form-wrapper{
+	display: block;
+	text-align: center;
+}
+
+form{
+	margin-top: 35px;
+	text-align: left;
+	font-size: 28px;
+	display: inline-block;
+}
+
+#torturer {
+	border: 2px solid #af0e0e;
+	background: none;
+	height: 25px;
+	font-family: "maneater_bbregular";
+	color: #af0e0e;
+	font-size: 28px;
+	padding: 5px;
+}
+
+#submit {
+	border: 2px solid #af0e0e;
+	background: none;
+	color: #af0e0e;
+	font-size: 20px;
+	font-family: "maneater_bbregular";
+	padding-top: 3px;
+	padding-bottom: 3px;
+	float: right;
+	margin-top: 8px;
+}
+
+#submit:hover{
+	cursor: pointer;
+	background: #af0e0e;
+	color: #212020;
+}
+
+input:focus{
+	outline: none;
+}
+
+@media(max-width: 765px) {
+	h1 {
+		font-size: 50px;
+	}
+
+	h2 {
+		font-size: 35px;
+	}
+
+	h3 {
+		font-size: 45px;
+	}
+	
+	ol {
+		font-size: 23px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	form {
+		font-size: 23px;
+	}
+
+	#torturer{
+		font-size: 23px;
+	}
+
+	.entry button{
+		font-size: 13px;
+	}
+
+	#submit{
+		font-size: 18px;
+		float: left;
+	}
+}
+
+@media (max-width: 691px) {
+	#burger-holder{
+		display: none;
+	}
+
+	#wishlist, #devoured{
+		width: 45vw;
+	}
+}
+
+@media (max-width: 533px) {
+	#torturer{
+		margin-top: 8px;
+	}
+}

@@ -1,0 +1,85 @@
+<h1>Lokesh's Burger Shack</h1>
+<h3>Feel the Heartburn</h3>
+
+<div id = "wrapper">
+	<div id = "wishlist">
+		<h2>Uninflicted Pain</h2>
+		<ol>
+			{{#each burgers}}
+				{{#unless devoured}}	
+					<li><div class = "entry">
+					<p>{{burger_name}}</p>
+					<button class = "delete" data-id="{{id}}">Devour</button>
+					</div></li>
+				{{/unless}}
+			{{/each}}
+		</ol>
+	</div>
+
+	<div id = "burger-holder">
+		<span class = "helper"></span>
+		<img src = "assets/img/burger-image.png" id = "burger-image">
+	</div>
+	
+	<div id = "devoured">
+		<h2>Inflicted Pain</h2>
+		<ol>
+			{{#each burgers}}
+				{{#if devoured}}
+					<li><div class = "entry">
+					<p>{{burger_name}}</p>
+					</div></li>
+				{{/if}}
+			{{/each}}
+		</ol>
+	</div>
+</div>
+
+<div id = "form-wrapper">
+	<form>
+		Your Next Torturer:
+		<input type = "text" id = "torturer"><br>
+		<input type = "submit" id = "submit" value = "Submit"></input>
+	</form>
+</div>
+
+<script>
+$(function(){
+	$("#submit").on("click", function(event){
+		event.preventDefault();
+		var torturer = $("#torturer").val().trim();
+		var newBurger = {
+			name: torturer
+		};
+
+		$.ajax("/", {
+			type: "POST",
+			data: newBurger
+		}).then(function(){
+			console.log("inserted new cat");
+			location.reload();
+		});
+	});
+
+	$(".delete").on("click", function(){
+		var devouredId = $(this).attr("data-id");
+		var devouredBurger = {
+			id: devouredId
+		};
+
+		$.ajax("/", {
+			type: "PUT",
+			data: devouredBurger
+		}).then(function(){
+			console.log("burger devoured");
+			location.reload();
+		});
+	});
+
+	$.ajax("/", {
+		type: "GET"
+	}).then(function(){
+		console.log("loaded page");
+	});
+});
+</script>
