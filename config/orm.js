@@ -26,6 +26,15 @@ var orm = {
 				throw error;
 			cb(response);
 		});
+	},
+
+	removeOne: function(tableName, columnName, columnValue, cb) {
+		var command = "DELETE FROM ?? WHERE ?? = ?";
+		connection.query(command, [tableName, columnName, columnValue], function(error, response){
+			if(error)
+				throw error;
+			cb(response);
+		});
 	}
 };
 

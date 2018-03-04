@@ -27,5 +27,17 @@ router.put("/", function(req, res){
 	res.end();
 });
 
+router.delete("/", function(req, res){
+	var deletedBurger = req.body;
+	burger.removeBurger(deletedBurger.id);
+	res.end();
+});
+
+router.put("/newburger", function(req, res){
+	var updatedBurger = req.body;
+	burger.undevourBurger(updatedBurger.id);
+	res.end();
+});
+
 module.exports = router;
 

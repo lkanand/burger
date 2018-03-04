@@ -18,6 +18,18 @@ var burger = {
 		orm.updateOne("burgers", "id", burgerID, "devoured", true, function(response){
 			console.log(response);
 		});
+	},
+
+	removeBurger: function(burgerID){
+		orm.removeOne("burgers", "id", burgerID, function(response){
+			console.log(response);
+		});
+	},
+
+	undevourBurger: function(burgerID){
+		orm.updateOne("burgers", "id", burgerID, "devoured", false, function(response){
+			console.log(response);
+		});
 	}
 };
 
